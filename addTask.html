@@ -1,0 +1,215 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Techsoft</title>
+Styles
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.3.min.js"></script>
+
+</head>
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/timesheet.js"></script>
+    <script src="cordova.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="addtask-page">
+        <!--Page Begining-->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+                <!-- <div class="ui-block-b social-icons">
+      <ul>
+          <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+              <li>  <a href="#">  <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                  <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+        </ul>
+     </div>-->
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks"> Tasks </a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--  <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="Switch to webversion" 
+      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+      </li> -->
+            </ul>
+        </div>
+        <div data-role="header" id="header" data-position="fixed">
+            <!--Header-->
+            <script type="text/javascript" src="js/addtask.js"></script>
+            <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+            <h1 class="ui-title headerH">
+
+                <img src="images/techsoft-logo.png" class="headerImg"/>
+            </h1>
+            <a href="#" data-icon="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon" onclick="closeWindowMethod();"></a>
+        </div>
+        <div data-role="main" class="contentarea ui-content">
+            <!--Content-->
+            <br/>
+            <div id="">
+                <center><span style="#111111;">All fields marked <span class="mandatory"> * </span> are required.</span>
+                </center>
+            </div>
+            <!-- <form id="taskform"> -->
+            <label for="taskcontractername" class="taskcontractername">Contract<span class="mandatory"> * </span>:</label>
+            <select id="taskcontractername" onchange="populateAll();">
+                <option value="">Select One</option>
+            </select>
+            <br/>
+            <label for="taskcontract" class="taskcontract">Contract <span class="mandatory"> * </span>:</label>
+            <input type="text" id="taskcontract" />
+            <br/>
+            <label for="taskcompany" class="taskcompany">Template <span class="mandatory"> * </span>:</label>
+            <select id="taskcompany" onchange="loadLocations()">
+                <option value="">Select One</option>
+            </select>
+            <br/>
+            <label for="tasklocation" class="tasklocation">Location <span class="mandatory"> * </span>:</label>
+            <select id="tasklocation" onchange="loadManagers()">
+                <option value="">Select One</option>
+            </select>
+            <br/>
+            <label for="taskmanager" class="taskmanager">Manager <span class="mandatory"> * </span>:</label>
+            <select id="taskmanager">
+                <option value="">Select One</option>
+            </select>
+            <br/>
+            <!-- <div class="ui-grid-a" >         
+          <div class="ui-block-a" style="width: 50% !important;">
+            <label class="checkfont" for="existingtask">Existing Task</label>
+              <input type="radio" id="existingtask"   name="tasktype" value="1" />            
+          </div>
+          <div class="ui-block-b" style="width: 50% !important;" >
+            <label class="checkfont" for="newtask">New Task</label>
+              <input type="radio" id="newtask"  name="tasktype" checked="true" value="0" />           
+          </div>
+        </div> (hided)-->
+            <!--  <div id="tasktypediv">
+          <label for="newtaskname">Tasks*:</label>
+          <input type="text" id="newtaskname" /><br/> 
+          </div>
+          <label for="taskstartdate">Start Date:</label>
+          <input type="date" id="taskstartdate" /><br/>
+          <label for="taskenddate">End Date:</label>
+          <input type="date" id="taskenddate" /><br/>
+          <label for="taskcategorytype">Category Type*:</label>
+          <select id="taskcategorytype" onchange="loadCategories()">
+            <option value="">Select One</option>
+          </select> <br/> 
+          <label for="taskcategory">Category*:</label>
+          <select id="taskcategory">
+            <option value="">Select One</option>
+          </select> <br/>
+          <label for="jobnumber">Job Number*:</label>
+          <select id="jobnumber" onchange="loadTaskCodes()">
+            <option value="">Select One</option>
+          </select> <br/>
+          <label for="taskcode">Task Code*:</label>
+          <select id="taskcode" onchange="loadCostCodes()">
+            <option value="">Select One</option>            
+          </select> <br/>
+          <label for="costcode">Cost Code*:</label>
+          <select id="costcode">
+            <option value="">Select One</option>
+          </select> <br/>
+          
+          <label>Is Billable:</label>
+
+
+          <div class="ui-grid-a">
+          <div class="ui-block-a " style="width: 50% !important;" >
+            <label>
+              <input type="radio" id="billable"  name="taskbillability" checked="true" value="Y" />Yes
+            </label>
+          </div>
+          <div class="ui-block-b" style="width: 50% !important;">
+            <label>
+              <input type="radio" id="nonbillable"  name="taskbillability" value="N" />No
+            </label>
+          </div>
+        </div>
+        <label for="taskcompany">Company*:</label>
+        <select id="taskcompany">  
+          <option value="">Select One</option>          
+        </select> <br/> 
+        <label for="taskcontract">Contract*:</label>
+        <input type="text" id="taskcontract" /><br/>
+        <label for="tasklocation">Location*:</label> 
+        <select id="tasklocation">
+            <option value="">Select One</option>
+        </select> <br/>
+        <label for="taskmanager">Manager:</label> 
+        <select id="taskmanager">
+            <option value="">Select One</option>
+        </select> <br/>
+        <label for="taskassignee">Assignee:</label> 
+        <select id="taskassignee">
+            <option value="">Select One</option>
+        </select> <br/>
+        <label for="taskidentifier">Identifier:</label> 
+        <select id="taskidentifier">  
+          <option value="">Select One</option>          
+        </select> <br/> 
+        <label for="tasknotes">Notes</label>
+        <textarea id="tasknotes"></textarea>  <br/> -->
+            <!-- <center>
+        <div class="ui-grid-a">
+        <div class="ui-block-a" style="width: 50% !important; padding-right:10px"><a href="#" data-role="button" id="addtaskbtn">Submit</a></div>
+        <div class="ui-block-b " style="width: 50% !important; padding-right:10px"><a href="#" data-role="button"  onclick="closeWindowMethod();">Cancel</a></div>
+
+        </div>
+        </center> -->
+            <!-- </div> -->
+            <!-- </form> -->
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <center>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <button type="button" id="addtaskbtn" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Submit</button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button" data-theme="c" class="ui-corner-all btn-orange" data-mini="true" onclick="closeWindowMethod();">Cancel</button>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

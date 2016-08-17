@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <!--<link rel="stylesheet" href="css/common.css" />-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="login-page">
+        <script src="js/login.js"></script>
+        <!--Left SideBar-->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="#"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="#"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="#"><img src="images/report-32.png" alt="Reports" class="ui-li-icon"> Reports </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon"> Queue </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a>
+                </li>
+                <li class="timesheetli">
+                    <a href="#"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none">Timesheets </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a>
+                </li>
+                <li class="bottom-push">
+                    <a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" class="ui-li-icon ui-corner-none">Switch to webversion</a>
+                </li>
+            </ul>
+        </div>
+        <!--End Left SideBar-->
+        <!-- Header Section -->
+        <div data-role="header" id="header" data-position="fixed">
+            <a href="index.html" data-icon="gear" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+            <h1 class="ui-title">                
+                  <img  src="" width="260" class="headerImg"/>
+            </h1>
+            <!-- <a href="login.html" class="ui-btn ui-shadow ui-btn-right ui-corner-all ui-icon-power ui-btn-icon-notext icons-custom">Delete</a> -->
+        </div>
+        <div class="header-title">
+            <h1>Login</h1></div>
+        <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+        <!-- Header Section End -->
+        <!-- Main Content Section  -->
+        <div data-role="main" class="ui-content contentarea">
+            <input style="background:url(images/icons-png/user-black.png) no-repeat left 10px center; padding-left:30px;" type="text" name="textinput-2" id="user_name" placeholder="Username" value="">
+            <input style="background:url(images/icons-png/password-icon.png) no-repeat left 10px center; padding-left:30px;" type="password" name="textinput-2" id="password" placeholder="Password" value="">
+            <label>
+                <input type="checkbox" id="remCheck" data-theme="none">Remember Me</label>
+            <a style="margin:50px 0 1% 0;" href="#" onclick="loginClick();" class="ui-btn ui-corner-all btn-blue">Login</a>
+            <a href="index.html" class="ui-btn ui-corner-all btn-blue">Cancel</a>
+            <br>
+        </div>
+        <!-- Main Content Section End  -->
+        <div data-role="footer" id="footer" data-position="fixed">
+        </div>
+    </div>
+</body>
+
+</html>

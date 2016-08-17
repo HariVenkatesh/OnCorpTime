@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/timesheet.js"></script>
+    <script src="cordova.js"></script>
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <div data-role="page" class="bg" id="addtimes"> -->
+    <!---------------------------------------Left SideBar----------------------------------------------------------------->
+    <div data-display="overlay" data-role="panel" id="left-menu">
+        <div class="ui-grid-b center" id="top-icon">
+            <div class="ui-block-a">
+                <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" /> </a>
+            </div>
+            <!-- <div class="ui-block-b social-icons">
+                 <ul>
+                 <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+                 <li>  <a href="#"> <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                    <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+                 </ul>
+                 </div>-->
+            <!--  </div>
+                 <ul data-role="listview" data-inset="false" id="left-side-menu">
+                 <li><a href="#"><img src="images/home-1.png" alt="France" class="ui-li-icon ui-corner-none">Home</a> </li>
+                 <li><a href="#"><img src="images/registration-w.png" alt="France" class="ui-li-icon ui-corner-none">Register / Login as Donor</a> </li>
+                 <li><a href="#"><img src="images/search.png" alt="Germany" class="ui-li-icon">Search for Donor</a> </li>
+                 <li><a href="#"><img src="images/search-donor-w.png" alt="Great Britain" class="ui-li-icon">My favourite Donors</a> </li>
+                 <li><a href="#"><img src="images/about-us-w.png" alt="Finland" class="ui-li-icon">About Us</a> </li>
+                 <li><a href="#"><img src="images/contact.png" alt="United States" class="ui-li-icon ui-corner-none">Contact Us</a> </li>
+                 <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="United States"
+                 class="ui-li-icon ui-corner-none">Switch to webversion</a>
+                 </li>
+                 </ul>
+                 </div> -->
+            <!---------------------------------------End Left SideBar------------------------------------------------>
+            <div data-role="page" class="bg" id="addtimesheet">
+                <!--<script src="js/timesheet.js"></script>-->
+                <script type="text/javascript" src="js/addtimesheet.js"></script>
+                <!--Left SideBar-->
+                <div data-display="overlay" data-role="panel" id="left-menu">
+                    <div class="ui-grid-b center" id="top-icon">
+                        <div class="ui-block-a headerA">
+                            <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                        </div>
+                    </div>
+                    <ul data-role="listview" data-inset="false" id="left-side-menu">
+                        <li>
+                            <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                        </li>
+                        <li class="billsli">
+                            <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                        </li>
+                        <li class="reportli">
+                            <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                        </li>
+                        <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                        <li class="timesheetli">
+                            <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                        </li>
+                        <li class="taskli">
+                            <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks"> Tasks</a>
+                        </li>
+                        <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                        <!--  <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                    </ul>
+                </div>
+                <!-- Header Section -->
+                <div data-role="header" id="header" data-position="fixed">
+                    <!-- <a href="#" data-icon="carat-l" data-iconpos="notext" class="icons-custom backicnpos" onclick="timesheetdialog();"></a> -->
+                    <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+                    <h1 class="ui-title headerH">
+                            <img src="images/techsoft-logo.png" class="headerImg"/>
+                        </h1>
+                    <a href="#" data-icon="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon" onclick="closeWindowMethodtimesheet();">back</a>
+                    <!--  <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom"></a> -->
+                    <!-- <a href="index.html" class="ui-btn ui-shadow ui-btn-right ui-corner-all ui-icon-power ui-btn-icon-notext icons-custom">Delete</a> -->
+                    <!--   <div class="header-title">
+                        
+                       
+                                    <center style="color:white;text-shadow:none;line-height:55px;">
+                                        Add Timesheet </center>
+
+                                
+                            
+                    </div> -->
+                </div>
+                <!-- <div class="addtymsheetlbl "> -->
+                <!-- </div> -->
+                <!--  <div class="header-title"><h1>Create New Schedule</h1></div> -->
+                <!--  <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+                <!-- Header Section End -->
+                <!-- Main Content Section  -->
+                <div data-role="main" class="ui-content contentarea">
+                    <br>
+                    <center><span style="#111111;">All fields marked <span class="mandatory"> * </span> are required.</span>
+                    </center>
+                    <div id="cartyperound">
+                        <div id="timecontent">
+                            <div id="timesheetAdminBlock" style="display:none">
+                                <label for="timesheetcontract">
+                                    Employee &nbsp;<span class="mandatory"> * </span>
+                                </label>
+                                <select id="timesheetEmployee" onchange="loadtimesheetcontract()">
+                                    <option value="">Select One</option>
+                                </select>
+                            </div>
+                            <label for="timesheetcontract" id="contract_label">
+                                Category &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <select id="timesheetcontract" name="contract" onchange="loadTSContract();">
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheetproject">
+                                Project &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <select id="timesheetproject" onchange="loadTSJob();">
+                                <!-- contractChange(this) -->
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheetjob">
+                                Job &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <select id="timesheetjob" onchange="loadTSJobNumber();">
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheetjobNumber" id="jobnumber_label">
+                                Job Code &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <select id="timesheetjobNumber" name="jobNumber" onchange="loadTSJTaskCode();">
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheettaskCode" id="taskcode_label">Task Code&nbsp;<span class="mandatory"> * </span></label>
+                            <select name="timesheettaskCode" id="timesheettaskCode" onchange="loadTSPayCode()">
+                                <!--onchange="loadTSPayCode();"-->
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheetpaycode">
+                                Pay Code &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <select id="timesheetpaycode">
+                                <option value="">Select One</option>
+                            </select>
+                            <label for="timesheetdate">
+                                Date &nbsp;<span class="mandatory"> * </span>
+                            </label>
+                            <input type="date" id="timesheetdate" />
+                            <!-- <label for="timesheetday">
+                                    Day &nbsp;<span class="mandatory"> * </span>
+                                </label>
+                                <select id="timesheetday">
+                                    
+                                    
+                                <option value="">Select One</option>
+                                
+                                </select> -->
+                            <!--  <label for="costCode" id="costcode_label">Cost Code&nbsp;*</label>
+                                <select name="costCode"  id="timesheetcostCode" onchange="costCodeChange(this);" disabled>
+                                <option value="">Select One</option>
+                               
+                                </select> -->
+                            <!-- <input data-role="date" data-inline="true" type="text" id="costCode" > -->
+                            <!-- existing <label for="transactiondate" id="transactiondate_label">
+                                    Transaction Date &nbsp;<span class="mandatory"> * </span>
+                                </label> 
+                                <input type="date" name="transactiondate" id="timesheettransactiondate"/>
+                                -->
+                        </div>
+                    </div>
+                    <label for="timesheetHours" id="hours">Hours&nbsp;<span class="mandatory"> * </span></label>
+                    <input type="number" id="timesheetHours" value="0.00">
+                    <label for="timesheetUnits">Units&nbsp;</label>
+                    <input type="number" id="timesheetUnits" value="0">
+                    <center>
+                        <label>
+                            <span class="mandatory"></span>
+                        </label>
+                    </center>
+                    <!-- <label for="amount" id="amount" >Units&nbsp;<span class="mandatory"> * </span></label>
+                           
+                        <input type="number" id="timesheetAmount" value="0" />
+                                
+                                
+                                <label for="description" id="timesheetdescription" >Description</label>
+                                
+                                
+                                <textarea data-mini="true" cols="40" rows="4" name="textarea" id="timesheetdesc"></textarea> -->
+                </div>
+                <!--  <center>
+                        <div class="ui-grid-a" id="timeedit">
+                            <div class="ui-block-a" style="width:50% !important;padding-left:6px !important;">
+                                <a href="#" data-role="button" class="ui-btn" onclick="validate();"> Submit</a>
+                            </div>
+                            <div class="ui-block-b" style="width:50% !important;padding-right:6px !important;">
+                                <a href="#" data-role="button" class="ui-btn" onclick="closeWindowMethodtimesheet();">Cancel</a>
+                            </div>
+                        </div>
+                    </center> -->
+                <div data-role="footer" id="footer" data-position="fixed">
+                    <center>
+                        <div class="ui-grid-b">
+                            <div class="ui-block-a">
+                                <button type="button" onclick="validate('Submitted');" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Submit</button>
+                            </div>
+                            <div class="ui-block-b">
+                                <button type="button" onclick="validate('Saved');" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Save</button>
+                            </div>
+                            <div class="ui-block-c">
+                                <button type="button" data-theme="c" class=" ui-corner-all btn-orange" data-mini="true" onclick="closeWindowMethodtimesheet();">Cancel</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <!-- <fieldset data-role="controlgroup" data-mini="true" >
+                     
+                     <div class="ui-grid-b">
+                     <div class="ui-block-a">
+                     <input type="radio" name="radio-choice" id="radio-choice-1" value="daily" onchange="radioClicked('daily');" />
+                     
+                     <label for="radio-choice-1"><span style="font-size:10px;">Day</span></label>
+                     </div>
+                     <div class="ui-block-b">
+                     <input type="radio" name="radio-choice" id="radio-choice-2" value="weekly" onchange="radioClicked('weekly');" />
+                     <label for="radio-choice-2"  style="font-size:10px;"><span style="font-size:10px;">Week</span></label>
+                     </div>
+                     <div class="ui-block-c">
+                     <input type="radio" name="radio-choice" id="radio-choice-3" value="monthly" onchange="radioClicked('monthly');" />
+                     <label for="radio-choice-3"><span style="font-size:10px;">Month</span></label>
+                     </div>
+                     </div>
+                     
+                     </fieldset>
+                     </div>
+                     </div>
+                     <div id="daily">
+                     
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="mon" >Monday&nbsp;</label>
+                     <input name="monday" id="1" class="day" type="number" disabled />
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="tue" >Tuesday&nbsp;</label>
+                     <input name="tuesday" id="2"  class="day" type="number" disabled />
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="mon" >Wednesday&nbsp;</label>                          
+                     <input name="wedneday" id="3"  class="day" type="number" disabled />           
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="thu" >Thursday&nbsp;</label>                           
+                     <input name="thursday" id="4"  class="day" type="number" disabled />           
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="fri" >Friday&nbsp;</label>                         
+                     <input name="friday" id="5"  class="day" type="number" disabled />         
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="sat" >Saturday&nbsp;</label>                           
+                     <input name="saturday" id="6"  class="day" type="number" disabled />           
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="sun" >Sunday&nbsp;</label>                         
+                     <input name="sunday" id="0"  class="day" type="number" disabled />         
+                     </div>
+                     </div>
+                     
+                     
+                     <div id="weekly">
+                     
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="mon" >Monday&nbsp;</label>                         
+                     <input name="monday" id="mon" type="number"/>          
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="tue" >Tuesday&nbsp;</label>                            
+                     <input name="tuesday" id="tue" type="number"/>         
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="mon" >Wednesday&nbsp;</label>                          
+                     <input name="wedneday" id="wen" type="number"/>            
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="thu" >Thursday&nbsp;</label>                           
+                     <input name="thursday" id="thu" type="number"/>            
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="fri" >Friday&nbsp;</label>                         
+                     <input name="friday" id="fri" type="number"/>          
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="sat" >Saturday&nbsp;</label>                           
+                     <input name="saturday" id="sat" type="number"/>            
+                     </div>
+                     <div id="hours_row" data-role="fieldcontain" >
+                     <label for="sun" >Sunday&nbsp;</label>                         
+                     <input name="sunday" id="sun" type="number"/>          
+                     </div>
+                     </div>
+                     
+                     <div id="calendar"></div>
+                     
+                     </div>
+                     -->
+                <!-- Main Content Section End  -->
+                <!-- <div data-role="footer" id="footer" data-position="fixed">
+                     <h1>©2014 Techsoft Business solutions</h1>
+                     </div> -->
+            </div>
+            <!--  </div></div> -->
+</body>
+
+</html>

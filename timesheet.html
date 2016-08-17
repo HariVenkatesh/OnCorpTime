@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <!-- <script src="js/timesheet.js"></script>-->
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="timesheet">
+        <script src="js/timesheet.js"></script>
+        <!--Left SideBar-->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" class="panelHeaderImg" /> </a>
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!--  <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks">Tasks</a>
+                </li>
+                <!--  <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!--   <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--      <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" 
+      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+      </li> -->
+            </ul>
+        </div>
+        <!--End Left SideBar-->
+        <div data-role="header" id="header" data-position="fixed">
+            <!-- <a href="TempScreen.html" data-icon="back" data-rel="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon">back</a> -->
+            <!-- <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a> -->
+            <h1 class="ui-title headerH">
+                    <img src="images/techsoft-logo.png" class="headerImg"/>
+                </h1>
+            <!--   <div class="header-title">  <a href="" onclick="" class="ui-btn ui-shadow ui-corner-all  ui-icon-search ui-btn-icon-notext ui-nodisc-icon icons-orange push-left5 left index"> Search </a>  <h1>Timesheet</h1>  <a style="margin-top: -37px;" href="addtimesheet.html" class="index ui-btn ui-shadow ui-corner-all  ui-icon-plus ui-nodisc-icon ui-btn-icon-notext icons-orange push-right5 right"> Add  </a> </div> -->
+            <div class="header-title">
+                <a href="#left-menu" class="ui-btn  ui-corner-all  ui-icon-bars ui-btn-icon-notext icons-orange push-left5 left index ui-nodisc-icon" id="searchToggle"> Search </a>
+                <h1>Timesheet</h1>
+                <a style="margin-top: -37px;" data-role="button" onclick="onWindowCloseadd();" href="" class="index ui-corner-all ui-btn ui-nodisc-icon ui-icon-plus ui-btn-icon-notext icons-blue right" id="addTimesheetBtn"> Add  </a>
+                <a style="margin-top: -37px;" href="" onclick="timesheetpagination_prev();" class="right"><img src="images/up.png" id="timesheetprevmatter"></img>
+                </a>
+                <a style="margin-top: -37px;" href="" onclick="timesheetpagination_next();" class="right"><img src="images/down.png" id="timesheetnextmatter"></img>
+                </a>
+            </div>
+        </div>
+        <!-- grid view for add in timesheet -->
+        <!--   <div class="ui-grid-b header-title" >
+                <div class="ui-block-a" ></div>
+                
+                <div class="ui-block-b" >
+                    <div class="labelstyle">
+                        <center style="color:white;text-shadow:none;">
+                            Timesheet
+                        </center>
+                    </div>
+                </div>
+                
+                <div class="ui-block-c" >
+                    
+                    <a href="addtimesheet.html" data-role="button" onclick="selectoption();" data-icon="plus" data-iconpos="notext" class="index ui-btn ui-shadow ui-corner-all ui-icon-plus ui-nodisc-icon ui-btn-icon-notext icons-orange push-right5 right"></a>
+                    
+                </div>
+            </div> -->
+        <!--header with search  -->
+        <!--  <div class="header-title">  <a href="" onclick="searchBill();" class="ui-btn ui-shadow ui-corner-all  ui-icon-search ui-btn-icon-notext ui-nodisc-icon icons-orange push-left5 left index"> Search </a>  <h1>Timesheet</h1>  <a style="margin-top: -37px;" href="addtimesheet.html" onclick="selectoption();" class="index ui-btn ui-shadow ui-corner-all  ui-icon-plus ui-nodisc-icon ui-btn-icon-notext icons-orange push-right5 right"> Add  </a> </div> -->
+        <div data-role="main" class="ui-content contentarea" style="top:40px;">
+            <!-- Search div -->
+            <!--  <div data-role="popup" id="hoursPopup" data-theme="a" class="ui-corner-all">
+                  <form> 
+                      <div style="padding:10px 20px;">
+                      <div data-role="header" data-theme="c" >
+                        <h1>Enter Hours</h1>
+                      </div>
+                      <div data-role="content">
+                          <span>Enter the hours you have worked</span>
+                            <input type="number" id="hoursWorked">
+                            <span id="hoursMessage" class="mandatory"></span>
+                      </div>
+                      <footer data-role="footer" data-theme="c">
+                            <div class="ui-grid-a">
+                              <div class="ui-block-a">       
+                               <a href="#" data-role="button" id="hourSubmitBtn" data-inline="true" class="btn-orange" onclick="validateUpdateHours();">Ok</a>
+                                 
+                                 <button data-role="button" id="hourSubmitBtn"  class="ui-corner-all btn-orange" onclick="validateUpdateHours();" data-mini="true">Update</button>
+                              </div>
+                              <div class="ui-block-b">
+                              <a href="#" data-role="button" id="hourCancelBtn" data-inline="true" class="btn-orange">Cancel</a> 
+                                <button data-role="button" id="hourCancelBtn"  class="ui-corner-all btn-orange" data-mini="true">Cancel</button>
+                              </div>
+                            </div>
+                      </footer>
+                      </div> -->
+            <!-- </div> -->
+            <div id="searchtimesheet" class="searchtimesheet" style="position:fixed;z-index:1;width:93%;background-color:#BDD7E4;padding-top:13%;padding-right:5%;">
+                <!--  <label for="contract" id="contrac" style="color:#111111;" disabled >
+              Contract
+            </label>   
+
+            <select id="searchcontract" name="searchcontract" disabled >
+
+                    <option value="">Select One</option>
+                                
+            </select> -->
+                <label for="searchTSCategory" style="color:#111111;">
+                    Category
+                </label>
+                <select id="searchTSCategory">
+                    <option value="">Select One</option>
+                </select>
+                <label for="searchTSDate" style="color:#111111;">
+                    Date
+                </label>
+                <input type="date" id="searchTSDate" />
+                <label for="searchTSStatus" style="color:#111111;">
+                    Status
+                </label>
+                <select id="searchTSStatus">
+                    <option value="">Select One</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Saved">Saved</option>
+                    <option value="Approved">Approved</option>
+                    <!-- <option value="Rejected">Rejected</option> -->
+                </select>
+                <!-- <label for="todate" id="toodate"  style="color:#111111;">
+              To Date
+            </label>
+            <input type="date" id="searchtodate" />  -->
+                <div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a id="submitbutton" onclick="submittimesheetNew();" data-role="button" class="btn-orange" data-theme="c" href="#page1" data-inline="false">Submit</a></div>
+                        <div class="ui-block-b">
+                            <a id="clearbutton" onclick="clearsel();" data-role="button" class="btn-orange" data-theme="c" href="" data-inline="false">Clear</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="managetimesheetlist" style="z-index:2;">
+                <form onsubmit="return false;">
+                    <input id="timesheetSearchInput" data-type="search">
+                </form>
+                <ul data-role="listview" data-filter="false" data-filter-placeholder="search" data-inset="true" id="timesheetlist" data-input="#timesheetSearchInput">
+                </ul>
+            </div>
+            <!-- <div class="ui-grid-a" id="#"> -->
+            <!-- <div class="ui-block-a" ><a href="#" data-icon="search" data-iconpos="notext" data-role="button" class="icons-custom" style="float:left;margin-left:0px"></a></div> -->
+            <!-- <div class="ui-block-a"><ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="search" data-inset="true" id="#" > 
+                 <li>one</li>
+                 <li>two</li>
+                 
+                 </ul>
+                 </div>
+                 
+                 <div class="ui-block-b"><a href="addtimesheet.html" data-role="button" data-icon="plus" data-iconpos="notext" data-role="button" class="icons-custom" style="float:right;top:-10px;height:absolute;width:absolute;" ></a>
+                 </div>
+                 
+                 </div> -->
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <!-- <h1>©2014 Techsoft Business solutions</h1>-->
+            <a href="" onclick="searchtimesheet();" class="ui-btn  ui-corner-all  ui-icon-search ui-btn-icon-notext icons-orange push-left5 left ui-nodisc-icon index" id="searchToggle"> Search </a>
+        </div>
+</body>
+
+</html>

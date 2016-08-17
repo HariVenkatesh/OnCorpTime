@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg">
+        <!---------------------------------------Left SideBar----------------------------------------------------------------->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" /> </a>
+                </div>
+                <!-- <div class="ui-block-b social-icons">
+        <ul>
+            <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+                <li>  <a href="#">  <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                    <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+        </ul>
+     </div>-->
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="#"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none">Home</a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none">Bills</a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/report-32.png" alt="Reports" class="ui-li-icon"> Reports </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon"> Queue </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none">Timesheets </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a>
+                </li>
+                <li class="bottom-push">
+                    <a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" class="ui-li-icon ui-corner-none">Switch to webversion</a>
+                </li>
+            </ul>
+        </div>
+        <!---------------------------------------End Left SideBar----------------------------------------------------------------->
+        <!-- Header Section -->
+        <div data-role="header" id="header">
+            <!--<a href="#left-menu" data-icon="back" data-iconpos="notext" class="icons-custom"></a>-->
+            <h1 class="ui-title headerH">
+                <img src="images/techsoft-logo.png" class="headerImg"/>
+            </h1>
+            <a href="index.html" class="ui-btn ui-shadow ui-btn-right ui-corner-all ui-icon-power ui-btn-icon-notext icons-custom">Delete</a>
+        </div>
+        <div class="header-title">
+            <h1>Create New Schedule</h1></div>
+        <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div>
+        <!-- Header Section End -->
+        <!-- Main Content Section  -->
+        <div data-role="main" class="ui-content contentarea" style="top:0px;">
+            <!--Select Row 1-->
+            <label for="select-native-2">Select Employee*</label>
+            <select name="select-native-2" id="select-native-2">
+                <option value="small">One</option>
+                <option value="medium">Two</option>
+                <option value="large">Three</option>
+            </select>
+            <!--Select Row 2-->
+            <label for="client">Select Client*</label>
+            <select name="select-native-2" id="select-native-2">
+                <option value="small">One</option>
+                <option value="medium">Two</option>
+                <option value="large">Three</option>
+            </select>
+            <!--Select Row 3-->
+            <label for="textinput-s">Meeting Name*</label>
+            <input name="textinput-s" id="meetingname" placeholder="" value="" data-clear-btn="true" type="text" required>
+            <!--Select Row 4-->
+            <label for="date">Start Date* </label>
+            <input name="mydate" id="meetingsdate" type="date" />
+            <!--Select Row 4-->
+            <label for="date">From*</label>
+            <select name="s_time" id="starttime">
+                <option value="12:00am">00:00am</option>
+                <option value="12:30am">00:30am</option>
+                <option value="1:00am">1:00am</option>
+                <option value="1:30am">1:30am</option>
+                <option value="2:00am">2:00am</option>
+                <option value="2:30am">2:30am</option>
+                <option value="3:00am">3:00am</option>
+                <option value="3:30am">3:30am</option>
+                <option value="4:00am">4:00am</option>
+                <option value="4:30am">4:30am</option>
+                <option value="5:00am">5:00am</option>
+                <option value="5:30am">5:30am</option>
+                <option value="6:00am">6:00am</option>
+                <option value="6:30am">6:30am</option>
+                <option value="7:00am">7:00am</option>
+                <option value="7:30am">7:30am</option>
+                <option value="8:00am">8:00am</option>
+                <option value="8:30am">8:30am</option>
+                <option value="9:00am">9:00am</option>
+                <option value="9:30am">9:30am</option>
+                <option value="10:00am">10:00am</option>
+                <option value="10:30am">10:30am</option>
+                <option value="11:00am">11:00am</option>
+                <option value="11:30am">11:30am</option>
+                <option value="12:00pm">12:00pm</option>
+                <option value="12:30pm">12:30pm</option>
+                <option value="1:00pm">1:00pm</option>
+                <option value="1:30pm">1:30pm</option>
+                <option value="2:00pm">2:00pm</option>
+                <option value="2:30pm">2:30pm</option>
+                <option value="3:00pm">3:00pm</option>
+                <option value="3:30pm">3:30pm</option>
+                <option value="4:00pm">4:00pm</option>
+                <option value="4:30pm">4:30pm</option>
+                <option value="5:00pm">5:00pm</option>
+                <option value="5:30pm">5:30pm</option>
+                <option value="6:00pm">6:00pm</option>
+                <option value="6:30pm">6:30pm</option>
+                <option value="7:00pm">7:00pm</option>
+                <option value="7:30pm">7:30pm</option>
+                <option value="8:00pm">8:00pm</option>
+                <option value="8:30pm">8:30pm</option>
+                <option value="9:00pm">9:00pm</option>
+                <option value="9:30pm">9:30pm</option>
+                <option value="10:00pm">10:00pm</option>
+                <option value="10:30pm">10:30pm</option>
+                <option value="11:00pm">11:00pm</option>
+                <option value="11:30pm">11:30pm</option>
+            </select>
+            <!--Select Row 4-->
+            <label for="date">End Date* </label>
+            <input name="mydate" id="meetingedate" type="date" />
+            <!--Select Row 4-->
+            <label for="date">To*</label>
+            <!--<input type="time" id="starttime" name="time">-->
+            <select name="s_time" id="endtime">
+                <option value="12:00am">00:00am</option>
+                <option value="12:30am">00:30am</option>
+                <option value="1:00am">1:00am</option>
+                <option value="1:30am">1:30am</option>
+                <option value="2:00am">2:00am</option>
+                <option value="2:30am">2:30am</option>
+                <option value="3:00am">3:00am</option>
+                <option value="3:30am">3:30am</option>
+                <option value="4:00am">4:00am</option>
+                <option value="4:30am">4:30am</option>
+                <option value="5:00am">5:00am</option>
+                <option value="5:30am">5:30am</option>
+                <option value="6:00am">6:00am</option>
+                <option value="6:30am">6:30am</option>
+                <option value="7:00am">7:00am</option>
+                <option value="7:30am">7:30am</option>
+                <option value="8:00am">8:00am</option>
+                <option value="8:30am">8:30am</option>
+                <option value="9:00am">9:00am</option>
+                <option value="9:30am">9:30am</option>
+                <option value="10:00am">10:00am</option>
+                <option value="10:30am">10:30am</option>
+                <option value="11:00am">11:00am</option>
+                <option value="11:30am">11:30am</option>
+                <option value="12:00pm">12:00pm</option>
+                <option value="12:30pm">12:30pm</option>
+                <option value="1:00pm">1:00pm</option>
+                <option value="1:30pm">1:30pm</option>
+                <option value="2:00pm">2:00pm</option>
+                <option value="2:30pm">2:30pm</option>
+                <option value="3:00pm">3:00pm</option>
+                <option value="3:30pm">3:30pm</option>
+                <option value="4:00pm">4:00pm</option>
+                <option value="4:30pm">4:30pm</option>
+                <option value="5:00pm">5:00pm</option>
+                <option value="5:30pm">5:30pm</option>
+                <option value="6:00pm">6:00pm</option>
+                <option value="6:30pm">6:30pm</option>
+                <option value="7:00pm">7:00pm</option>
+                <option value="7:30pm">7:30pm</option>
+                <option value="8:00pm">8:00pm</option>
+                <option value="8:30pm">8:30pm</option>
+                <option value="9:00pm">9:00pm</option>
+                <option value="9:30pm">9:30pm</option>
+                <option value="10:00pm">10:00pm</option>
+                <option value="10:30pm">10:30pm</option>
+                <option value="11:00pm">11:00pm</option>
+                <option value="11:30pm">11:30pm</option>
+            </select>
+            <!--Select Row 4-->
+            <label for="description">Description*</label>
+            <textarea name="" rows="10" id="description" placeholder="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"></textarea>
+            <a href="#" class="ui-btn ui-corner-all btn-blue">Save</a>
+            <a href="#" class="ui-btn ui-corner-all btn-orange">Cancel</a>
+        </div>
+        <!-- Main Content Section End  -->
+        <div data-role="footer" id="footer" data-position="fixed">
+            <h1>©2014 Techsoft Business solutions</h1>
+        </div>
+    </div>
+</body>
+
+</html>

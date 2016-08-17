@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="requesttype_page">
+        <script src="js/request_type.js"></script>
+        <!--Left SideBar-->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+                <!-- <div class="ui-block-b social-icons">
+      <ul>
+          <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+              <li>  <a href="#">  <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                  <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+        </ul>
+     </div>-->
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!--  <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks">Tasks</a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--       
+        
+      <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="Switch to webversion" 
+      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+      </li> -->
+            </ul>
+        </div>
+        <!---------------------------------------End Left SideBar----------------------------------------------------------------->
+        <!-- Header Section -->
+        <div data-role="header" id="header">
+            <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+            <h1 class="ui-title headerH">
+              <img src="images/techsoft-logo.png" class="headerImg"/>
+            </h1>
+            <a href="" onclick="closeWindowMethod();" data-icon="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+        </div>
+        <div class="header-title" id="custome_header">
+            <h1>Generate Report</h1></div>
+        <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+        <!-- Header Section End -->
+        <!-- Main Content Section  -->
+        <div data-role="main" class="ui-content contentarea" style="top:0px;">
+            <!--text Row 1-->
+            <div id="">
+                <center><span style="#111111;">All fields marked <span class="mandatory"> * </span> are required.</span>
+                </center>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="request_dropdown">
+                    Request Type&nbsp;<span class="mandatory"> * </span>
+                </label>
+                <select id="request_dropdown" name="request_dropdown" onchange="">
+                    <option value="Select One">Select One</option>
+                    <option value="Invoice">Invoice Report</option>
+                    <option value="Payment">Payment Report</option>
+                    <option value="Timesheet">Timesheet Report</option>
+                </select>
+            </div>
+            <!--text Row 1-->
+            <div data-role="fieldcontain">
+                <label for="category_dropdown">
+                    Category&nbsp;<span class="mandatory"> * </span>
+                </label>
+                <select id="category_dropdown" name="category_dropdown" onchange="typeChange();">
+                    <option value="Select One">Select One</option>
+                    <option value="Matter">Matter</option>
+                    <option value="YTD">YTD</option>
+                    <option value="MTD">MTD</option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" id="matter_dropdown">
+                <label for="matter" id="re_Matter">
+                    Matter&nbsp;<span class="mandatory"> * </span>
+                </label>
+                <select id="matter" name="matter" onchange="">
+                    <option value="-1">All</option>
+                </select>
+            </div>
+            <!-- <a href="#" onclick="saveRequest();"  class="ui-btn ui-corner-all btn-blue">Submit</a>
+        <a href=""  onclick="closeWindowMethod();" class="ui-btn ui-corner-all btn-blue">Cancel</a> -->
+        </div>
+        <!-- Main Content Section End  -->
+        <div data-role="footer" id="footer" data-position="fixed">
+            <center>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <!-- <a href="#" onclick="saveRequest();"  class="ui-corner-all btn-orange" data-mini="true" data-theme="c"></a> -->
+                        <button onclick="saveRequest();" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Submit</button>
+                    </div>
+                    <div class="ui-block-b">
+                        <!-- <a href=""  onclick="closeWindowMethod();" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Cancel</a> -->
+                        <button onclick="closeWindowMethod();" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Cancel</button>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Techsoft</title>
+<!--Styles
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.3.min.js"></script> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/timesheet.js"></script>
+    <script src="cordova.js"></script>
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="tasks-page">
+        <!--Page-->
+        <script type="text/javascript" src="js/tasklister.js"></script>
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+                <!-- <div class="ui-block-b social-icons">
+      <ul>
+          <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+              <li>  <a href="#">  <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                  <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+        </ul>
+     </div>-->
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks"> Tasks </a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--  <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="Switch to webversion" 
+      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+      </li> -->
+            </ul>
+        </div>
+        <div data-role="header" id="header" data-position="fixed">
+            <!--  <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a> -->
+            <h1 class="ui-title headerH">
+        <img src="images/techsoft-logo.png" class="headerImg"/>
+    </h1>
+            <!-- <a href="#left-menu" data-icon="back" data-iconpos="notext" class="icons-custom"></a> -->
+            <!--  <div class="header-title">  <a href="" onclick="searchBill();" class="ui-btn ui-shadow ui-corner-all  ui-icon-search ui-btn-icon-notext ui-nodisc-icon icons-orange push-left5 left index"> Search </a>  <h1>Bills</h1>  <a style="margin-top: -37px;" href="" onclick="addBill();" class="index ui-btn ui-shadow ui-corner-all  ui-icon-plus ui-nodisc-icon ui-btn-icon-notext icons-orange push-right5 right"> Add  </a> </div> -->
+            <div class="header-title"><a href="#left-menu" class="ui-btn  ui-corner-all  ui-icon-bars ui-btn-icon-notext icons-orange push-left5 left index ui-nodisc-icon"> Search </a> <a href="#" data-role="button" data-iconpos="notext" data-icon="calendar" class="icons-orange ui-nodisc-icon push-left5 left index" onclick="cloneSettings();">Clone</a>
+                <h1>Tasks</h1><a style="margin-top: -37px;" href="addTask.html" class="index ui-corner-all ui-btn ui-nodisc-icon ui-icon-plus ui-btn-icon-notext icons-blue right" id="addTaskBtn"> add</a>
+                <a style="margin-top: -37px;" href="" onclick="taskpagination_prev();" class="right"><img src="images/up.png" id="taskprevmatter"></img>
+                </a>
+                <a style="margin-top: -37px;" href="" onclick="taskpagination_next();" class="right"><img src="images/down.png" id="tasknextmatter"></img>
+                </a>
+            </div>
+            <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+        </div>
+        <div data-role="main" class="ui-content contentarea" style="top:40px;">
+            <div id="searchTasks" class="searchTasks" style="position:fixed;z-index:1;width:93%;background-color:#BDD7E4;padding-top:13%;padding-right:5%;">
+                <label style="color:#111111;" for="searchContract" class='searchContract'>Contract</label>
+                <select id="searchContract"></select>
+                <label style="color:#111111;" for="searchAssignee" class='searchAssignee'>Assignee</label>
+                <select id="searchAssignee"></select>
+                <!-- <label style="color:#111111;" for="searchTaskFrom">Start Date</label>
+      <input type="date" id="searchTaskFrom" />
+      <label style="color:#111111;" for="searchTaskTo">End Date</label>
+      <input type="date" id="searchTaskTo" /> -->
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="tasksearchbtn" onclick="tasksubmit();" data-role="button" class="btn-orange" data-theme="c" href="#" data-inline="false">Submit</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#" id="taskclearbtn" onclick="clearTaskFields();" data-role="button" data-theme="c">Clear</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add  -->
+            <!-- Search div -->
+            <!-- <div id="searchBill" class="searchBill" style="position:fixed;z-index:1;width:93%;background-color:#BDD7E4;padding-top:10%;padding-right:5%;" >
+      <label style="color:#111111;" >
+              Month
+            </label>          
+            <select class="managebills managebillsmonth" id="month" data-inline="false" data-mini="false" >
+            <option value="">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>          
+            </select>         
+            <label for="year"  style="color:#111111;">
+              Year
+            </label>
+            <select class="managebills managebillsyear"  id="year"  data-mini="false">
+                    
+            </select>         
+            <label for="status"  style="color:#111111;">
+              Status
+            </label>
+            <select class="managebills managebillsstatus"  id="status"  data-mini="false" >
+            <option value="">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</option>
+            <option value="Submitted">Submitted</option>  
+            <option value="Saved">Saved</option>
+            <option value="Approved">Approved</option>  
+            <option value="Rejected">Rejected</option>
+            <option value="Void">Void</option>        
+            </select>       
+          <div>
+            <a  id ="submitButton" onclick="submit();" data-role="button" class="btn-orange" data-theme = "c" href="#page1"  data-inline="false">Submit</a>
+           
+                                  
+                                        </div>  
+</div> -->
+            <div id="managetaskslist" style="z-index:2;">
+                <form onsubmit="return false;">
+                    <input id="taskSearchInput" data-type="search">
+                </form>
+                <ul data-role="listview" class="ui-icon-alt jqm-custom-list-view listul" data-filter-placeholder="Search" data-inset="true" data-filter="false" data-input="#taskSearchInput" id="tasklist" data-split-icon='check'>
+                </ul>
+            </div>
+        </div>
+        <!-- <div data-role="main" class="ui-content contentarea" style="top:40px;">
+
+        
+    
+        <ul data-role="listview" data-filter="true"  data-filter-placeholder="Search"  data-inset="true" id="tasklist">         
+        </ul>                   
+      
+      </div> -->
+        <div data-role="footer" id="footer" data-position="fixed">
+            <a href="#" onclick="searchTasks();" class="ui-btn  ui-corner-all  ui-icon-search ui-btn-icon-notext icons-orange push-left5 left ui-nodisc-icon index" id="searchToggle"> Search </a>
+        </div>
+    </div>
+</body>
+
+</html>

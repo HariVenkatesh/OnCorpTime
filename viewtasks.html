@@ -1,0 +1,207 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Techsoft</title>
+</head> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/timesheet.js"></script>
+    <script src="cordova.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="viewtasks_page">
+        <script type="text/javascript" src="js/viewtask.js"></script>
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+                <!-- <div class="ui-block-b social-icons">
+      <ul>
+          <li>   <a href="#"> <img src="images/facebook.png" width="24" height="24"  /> </a>  </li>
+              <li>  <a href="#">  <img src="images/twitter.png" width="24" height="24" /> </a> </li>
+                  <li>  <a href="#">  <img src="images/google-plus.png" width="24" height="24" /> </a> </li>
+        </ul>
+     </div>-->
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks"> Tasks </a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--  <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="Switch to webversion" 
+      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+      </li> -->
+            </ul>
+        </div>
+        <div data-role="header" id="header" data-position="fixed">
+            <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+            <h1 class="ui-title headerH">
+              <img src="images/techsoft-logo.png" class="headerImg"/>
+            </h1>
+            <!-- <a href="" data-icon="back" data-rel="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a> -->
+            <!-- <a href="index.html" class="ui-btn ui-shadow ui-btn-right ui-corner-all ui-icon-power ui-btn-icon-notext icons-custom">Delete</a> -->
+        </div>
+        <div class="header-title">
+            <a href="tasks.html" class="ui-btn  ui-corner-all  ui-icon-back ui-btn-icon-notext icons-orange ui-nodisc-icon push-left5 left index"> back </a>
+            <h1>View Tasks</h1>
+            <!-- <a style="margin-top: -37px;" href="" onclick="" class="right"><img src="images/up.png" id="prevclient"></img></a>
+          <a style="margin-top: -37px;" href="" onclick="" class="right"><img src="images/down.png" id="nextclient"></img></a> -->
+        </div>
+        <div data-role="content" class="contentarea" style="top:0px;">
+            <table data-role="table" id="table-custom-2" data-mode="" class="" data-column-btn-theme="b" data-column-popup-theme="a">
+                <tbody>
+                    
+                    <tr>
+                        <td id="viewcontractorlabel">Contract</td>
+                        <td id="vcontractorname"></td>
+                    </tr>
+                    <tr>
+                        <td id="viewtasklabel">Task</td>
+                        <td id="vtask"></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date</td>
+                        <td id="vtaskstartdate"></td>
+                    </tr>
+                    <tr>
+                        <td>End Date</td>
+                        <td id="vtaskenddate"></td>
+                    </tr>
+                    <tr>
+                        <td id="vcompanylabel">Company</td>
+                        <td id="vcompany"></td>
+                    </tr>
+                    <!-- <tr>
+              <td>Category Type</td>
+              <td id="vtaskcategorytype"></td>
+            </tr>
+            <tr>
+              <td>Category</td>
+              <td id="vtaskcategory"></td>
+            </tr> -->
+                    <!-- <tr>
+              <td id="viewjobnumberlabel">Job Number</td>
+              <td id="vjobnumber"></td>
+            </tr> -->
+                    <tr>
+                        <td id="viewcontractlabel">Contract</td>
+                        <td id="vcontractname"></td>
+                    </tr>
+                    <!-- <tr>
+              <td id="viewtaskcodelabel">Task Code</td>
+              <td id="vtaskcode"></td>
+            </tr>
+            <tr>
+              <td>Cost Code</td>
+              <td id="vcostcode"></td>
+            </tr> -->
+                    <tr>
+                        <td>Location</td>
+                        <td id="vlocation"></td>
+                    </tr>
+                    <tr>
+                        <td id="vmanagerlabel">Manager</td>
+                        <td id="vmanager"></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td id="vstatus"></td>
+                    </tr>
+                    <!-- <tr>
+              <td>Billable</td>
+              <td id="vbillable"></td>
+            </tr> -->
+                    <tr>
+                        <td id="vassigneelabel">Assignee</td>
+                        <td id="vassignee"></td>
+                    </tr>
+                    <!-- <tr>
+              <td>Identifier</td>
+              <td id="videntifier"></td>
+            </tr>  -->
+                    <tr>
+                        <td>Notes</td>
+                        <td id="vnotes"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <center>
+                <div class="ui-grid-d" class="btn-blue">
+                    <div class="ui-block-a">
+                        <a href="#" class="ui-btn ui-btn-inline ui-icon-phone ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="#" id="vphone">Icon only</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#" class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-notext icons-whitegray ui-nodisc-icon" id="vmail" onclick="composeMail()">Icon only</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="#" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="showEditPage();" id="editTaskBtn">Icon only</a>
+                    </div>
+                    <div class="ui-block-d">
+                        <a href="#" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="completeTask();">Complete</a>
+                    </div>
+                    <div class="ui-block-e">
+                        <a href="#" class="ui-btn ui-btn-inline ui-icon-bullets ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="showListPage();">Icon only</a>
+                    </div>
+                </div>
+                <!--
+              <div class="ui-grid-a" class="btn-blue">
+              <div class="ui-block-a">
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="showEditPage();" id="editTaskBtn">Icon only</a>
+              </div>
+              <div class="ui-block-b">
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-bullets ui-btn-icon-notext icons-whitegray ui-nodisc-icon" onclick="showListPage();">Icon only</a>
+              </div>
+              </div>
+          -->
+                <!-- <div class="ui-grid-d" class="btn-blue">
+              <div class="ui-block-a">
+                <a href="#" id="calltoclient" class="ui-btn ui-btn-inline ui-icon-phone ui-btn-icon-notext icons-whitegray ui-nodisc-icon" style="width:50% !important;">Icon only</a>
+              </div>
+              <div class="ui-block-b">
+                <a href="#" onclick="mailtoclient();"class="ui-btn ui-btn-inline ui-icon-mail ui-btn-icon-notext icons-whitegray ui-nodisc-icon">Icon only</a>
+              </div>
+              <div class="ui-block-c">
+                <a href="#" onclick="onWindowClose();" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-notext icons-whitegray ui-nodisc-icon">Icon only</a>
+              </div>
+              <div class="ui-block-d">
+                <a href="#" onclick="removeBill();" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-notext icons-whitegray ui-nodisc-icon">Icon only</a>
+              </div>
+              <div class="ui-block-e">
+                <a href="tasks.html" class="ui-btn ui-btn-inline ui-icon-bullets ui-btn-icon-notext icons-whitegray ui-nodisc-icon">Icon only</a>
+              </div>
+          </div> -->
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

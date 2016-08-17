@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Techsoft</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" class="bg" id="temp-page">
+        <script type="text/javascript">
+        $("#temp-page").ready(function() {
+            moduleRevealer();
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", "css/" + localStorage.getItem("colortheme") + ".css");
+            if (typeof fileref != "undefined") {
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
+        });
+        </script>
+        <!-- Header Section -->
+        <div data-role="header" id="header">
+            <h1 class="ui-title headerH">
+              <img src="images/techsoft-logo.png" class="headerImg" />
+            </h1>
+            <a href="" class="ui-btn ui-shadow ui-btn-right ui-corner-all ui-icon-power ui-btn-icon-notext icons-custom ui-nodisc-icon" onclick="logout();">Delete</a>
+        </div>
+        <!-- Header Section End -->
+        <!-- Main Content Section  -->
+        <div data-role="content" class="ui-content contentarea">
+            <br/>
+            <ul data-role="listview" data-inset="true" id="menu-list">
+                <li class="divider-bg" data-role="list-divider"> Home </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="" alt="France" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="" alt="France" class="ui-li-icon ui-corner-none reports"> Reports </a>
+                </li>
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="" alt="France" class="ui-li-icon ui-corner-none timesheet"> Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="" alt="France" class="ui-li-icon ui-corner-none tasks">Tasks</a>
+                </li>
+                <!--<li><a href="manageclients.html"><img src="" alt="France" class="ui-li-icon ui-corner-none" id="test"> Clients
+    
+        </a></li> -->
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="France" class="ui-li-icon ui-corner-none">Appointments </a></li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="France" class="ui-li-icon ui-corner-none"> Payments </a></li> -->
+            </ul>
+            <!-- <div class="bottom-shadow shadow-fix"> <img src="images/shadow2.png" /> </div> -->
+        </div>
+        <!-- Main Content Section End  -->
+        <div data-role="footer" id="footer" data-position="fixed">
+        </div>
+    </div>
+</body>
+
+</html>

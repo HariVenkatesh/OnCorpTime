@@ -1,0 +1,332 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title> TechSoft </title>
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="css/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>>
+    <link rel="stylesheet" href="css/loading_design.css">
+    <script src="fullcalendar/fullcalendar.js">
+    </script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <link rel="stylesheet" href="css/loading_design.css">
+    <script type="text/javascript">
+    </script>
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="addclient_page" class="bg">
+        <script src="js/addclient.js"></script>
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon"> Reports </a>
+                </li>
+                <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon">Tasks</a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <li class="bottom-push">
+                    <a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" class="ui-li-icon ui-corner-none">Switch to webversion</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="header" id="header" data-position="fixed">
+            <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+            <h1 class="ui-title headerH">
+                <img src="images/techsoft-logo.png" class="headerImg"/>
+            </h1>
+            <!--<a href=""  data-rel="back" data-icon="back" data-iconpos="notext" class="icons-custom"></a>-->
+            <a href="" onclick="closeWindowMethod();" data-icon="back" data-iconpos="notext" class="icons-custom ui-nodisc-icon"></a>
+        </div>
+        <div class="header-title">
+            <h1>Create New Client</h1></div>
+        <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+        <center>
+            <p style='color:#111111;'>All fields marked * are required.</p>
+        </center>
+        <!-- <a href="addclient.html" data-role="button" data-inline="false" class="btn-blue"> Create Client </a>   -->
+        <div id="addclient" style="margin-left:2%;margin-right:2%;">
+            <div>
+                <label for="textinput-s" style="color:#111111;">Client Type*</label>
+            </div>
+            <div>
+                <select name="clienttype" id="clienttype">
+                    <option value=" ">Select One</option>
+                </select>
+            </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">First Name*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="fname" onblur="getmatter();" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Last Name*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="lname" onblur="getmatter();" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Street*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="street" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">City*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="city" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">State*</label>
+            </div>
+            <div>
+                <select name="state" id="state">
+                    <option value="">Select One</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DC">D.C.</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="FM">Micronesia</option>
+                    <option value="GA">Georgia</option>
+                    <option value="GU">Guam</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="IA">Iowa</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MD">Maryland</option>
+                    <option value="ME">Maine</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MP">Marianas</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MT">Montana</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NY">New York</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="PW">Palau</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VA">Virginia</option>
+                    <option value="VI">Virgin Islands</option>
+                    <option value="VT">Vermont</option>
+                    <option value="WA">Washington</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AA">Military Americas</option>
+                    <option value="AE">Military Europe/ME/Canada</option>
+                    <option value="AP">Military Pacific</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Zip*</label>
+            </div>
+            <div>
+                <input name="textinput-s" onchange="validateZipcode();" id="zip" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Phone*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="phone" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Email*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="email" onchange="validateEmail();" placeholder="" value="" data-clear-btn="true" type="text"> </div>
+            <div>
+                <label for="payment" style="color:#111111;">Payment Type*</label>
+            </div>
+            <div>
+                <select name="paymentype" id="paymenttype" onchange="getmatter();">
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="H4">H4</option>
+                    <option value="H5">H5</option>
+                    <option value="H6">H6</option>
+                    <option value="H7">H7</option>
+                    <option value="H8">H8</option>
+                    <option value="H9">H9</option>
+                    <option value="H10">H10</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                    <option value="C3">C3</option>
+                    <option value="C4">C4</option>
+                    <option value="C5">C5</option>
+                    <option value="C6">C6</option>
+                    <option value="C7">C7</option>
+                    <option value="C8">C8</option>
+                    <option value="C9">C9</option>
+                    <option value="C10">C10</option>
+                    <option value="CONT">CONT</option>
+                </select>
+            </div>
+            <div>
+                <label for="category" style="color:#111111;">Category*</label>
+            </div>
+            <div>
+                <select name="category" id="categorytype" onchange="getmatter();">
+                    <option value="C">C</option>
+                    <option value="R">R</option>
+                    <option value="V">V</option>
+                </select>
+            </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Matter*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="matter" style="background-color:lightgrey;" placeholder="" value="" data-clear-btn="false" type="text" readonly> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Installment Effective Date*</label>
+            </div>
+            <div>
+                <input name="installmentdate" id="installmentdate" data-clear-btn="true" type="date"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Installment Amount*</label>
+            </div>
+            <div>
+                <input name="textinput-s" id="amount" data-clear-btn="true" type="number"> </div>
+            <div>
+                <label for="textinput-s" style="color:#111111;">Status Effective Date*</label>
+            </div>
+            <div>
+                <input name="statusdate" id="statusdate" data-clear-btn="true" type="date"> </div>
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <center>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <button type="button" onclick="Saveclients();" class="ui-corner-all btn-orange" data-mini="true" data-theme="c">Submit</button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button" data-theme="c" class=" ui-corner-all btn-orange" data-mini="true" onclick="closeWindowMethod();">Cancel</button>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

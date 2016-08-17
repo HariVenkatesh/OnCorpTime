@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title> TechSoft </title>
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <!-- <link rel="stylesheet" href="fullcalendar/fullcalendar.css"> -->
+    <link rel="stylesheet" href="css/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>>
+    <link rel="stylesheet" href="css/loading_design.css">
+    <!-- // <script src="fullcalendar/fullcalendar.js"> </script> -->
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <!--Manage clients-->
+    <div data-role="page" id="manageclient_page" class="bg">
+        <script src="js/manageclients.js"></script>
+        <!-- // <script src="js/email_composer.js"></script> -->
+        <script src="js/jquery.maskedinput.js"></script>
+        <!-- Panel -->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="#"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="#"><img src="images/report-32.png" alt="Reports" class="ui-li-icon"> Reports </a>
+                </li>
+                <li>
+                    <a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a>
+                </li>
+                <li class="taskli">
+                    <a href="#"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon">Task Queue </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a>
+                </li>
+                <li class="timesheetli">
+                    <a href="#"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none">Timesheets </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a>
+                </li>
+                <!--    <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" 
+	      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+	      </li> -->
+            </ul>
+        </div>
+        <!-- Header -->
+        <div data-role="header" id="header" data-position="fixed">
+            <!-- <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom"></a>-->
+            <h1 class="ui-title headerH">
+	             	<img src="images/techsoft-logo.png" class="headerImg"/>
+	            </h1>
+            <div class="header-title"><a href="#left-menu" class="ui-btn  ui-corner-all  ui-icon-bars ui-btn-icon-notext icons-orange push-left5 left index ui-nodisc-icon" id="searchToggle"> Search </a>
+                <h1>Clients</h1><a style="margin-top: -37px;" href="" onclick="addClient();" class="index ui-corner-all ui-btn ui-nodisc-icon ui-icon-plus ui-btn-icon-notext icons-blue right"> Add  </a>
+                <a style="margin-top: -37px;" href="" onclick="pagination_prev();" class="right"><img src="images/up.png" id="prevmatter"></img>
+                </a>
+                <a style="margin-top: -37px;" href="" onclick="pagination_next();" class="right"><img src="images/down.png" id="nextmatter"></img>
+                </a>
+            </div>
+            <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+            <!--<a href=""  data-rel="back" data-icon="back" data-iconpos="notext" class="icons-custom"></a>-->
+        </div>
+        <!-- Custom Header -->
+        <div id="clients" style="margin-top:50px;">
+            <div id="categorytype" style="position:fixed;z-index:1;width:96%;background-color:#BDD7E4;padding-left:2%;padding-right:2%;display:none;">
+                <label for="clientname" style="color:#111111;line-height:20px">Name</label>
+                <select name="clientname" class="manageclient" id="clientname">
+                    <option value="">Select One</option>
+                </select>
+                <label for="payment" style="color:#111111;line-height:20px">Payment Type</label>
+                <select name="paymentype" class="manageclient" id="paymenttype">
+                    <option value="">Select One</option>
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="H4">H4</option>
+                    <option value="H5">H5</option>
+                    <option value="H6">H6</option>
+                    <option value="H7">H7</option>
+                    <option value="H8">H8</option>
+                    <option value="H9">H9</option>
+                    <option value="H10">H10</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                    <option value="C3">C3</option>
+                    <option value="C4">C4</option>
+                    <option value="C5">C5</option>
+                    <option value="C6">C6</option>
+                    <option value="C7">C7</option>
+                    <option value="C8">C8</option>
+                    <option value="C9">C9</option>
+                    <option value="C10">C10</option>
+                    <option value="CONT">CONT</option>
+                </select>
+                <label for="category" style="color:#111111;line-height:20px">Category</label>
+                <select name="categorytype" class="manageclient" id="category_type">
+                    <option value="">Select One</option>
+                    <option value="C">C</option>
+                    <option value="R">R</option>
+                    <option value="V">V</option>
+                </select>
+                <a id="submit_btn" onclick="SearchClients();" data-role="button" class="btn-orange" data-theme="c" href="#" data-inline="false">Submit</a>
+            </div>
+            <div id="filterarea">
+                <div data-role="content" class="mSearch" id="manageclients" style="z-index:2;top:0px;">
+                    <ul id="listclient" data-role="listview" class="ui-icon-alt jqm-custom-list-view" data-divider-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search Clients"> </ul>
+                </div>
+                <!--
+	                          <div class="ui-grid-a">
+      <div class="ui-block-a"><button  data-icon="arrow-l"  data-mini="true" id="prev" data-theme="c" onclick="pagination_prev();">Previous</button></div>
+    <div class="ui-block-b"><button data-icon="arrow-r"  data-mini="true" id="next" data-iconpos="right" data-theme="c" onclick="pagination_next();">Next</button>
+    </div>
+     </div>-->
+            </div>
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <!-- <center> <div class="ui-grid-c options">
+  <div class="ui-block-a"><a href=""  id="calltoclient" data-mini="true" class="ui-btn ui-corner-all btn-orange" ><span class="footertext">Call</span></a></div>
+     <div class="ui-block-b"><button  data-mini="true"  class="ui-corner-all btn-blue"  onclick="mailtoclient();"><span class="footertext">Email</span></button></div>
+       <div class="ui-block-c"><button  data-mini="true"  class="ui-corner-all btn-orange"  onclick="viewclient();"><span class="footertext">View</span></button></div>
+     <div class="ui-block-d"><button  data-mini="true"  class="ui-corner-all btn-blue"  onclick=""><span class="footertext">Reports</span></button></div>
+
+    </div></center>
+   <center><div class="ui-grid-a pagination">
+        <div class="ui-block-a"><a href="" data-role="button"  data-icon="arrow-l" class="btn-orange" data-mini="true" id="prevmatter"  onclick="pagination_prev();">Previous</a></div>
+        <div class="ui-block-b"><a href="" data-role="button" data-icon="arrow-r" class="btn-orange"  data-mini="true" id="nextmatter" data-iconpos="right" onclick="pagination_next();">&nbsp;&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+    </div></center>-->
+            <a href="" onclick="searchClient();" class="ui-btn  ui-corner-all  ui-icon-search ui-btn-icon-notext icons-orange push-left5 left ui-nodisc-icon index" id="searchToggle"> Search </a>
+            <!--<h1>©2014 Techsoft Business solutions</h1>-->
+        </div>
+    </div>
+</body>
+
+</html>

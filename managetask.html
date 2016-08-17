@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title> TechSoft </title>
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/common.css" />
+    <!-- <link rel="stylesheet" href="fullcalendar/fullcalendar.css"> -->
+    <link rel="stylesheet" href="css/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>>
+    <link rel="stylesheet" href="css/loading_design.css">
+    <!-- // <script src="fullcalendar/fullcalendar.js"> </script> -->
+    <style>
+    .ui-field-contain,
+    .ui-mobile fieldset.ui-field-contain {
+        border-width: 0px;
+        padding: 0px;
+        margin: 1em 0px;
+    }
+    
+    .ui-field-contain label.ui-select {
+        vertical-align: top;
+        display: inline-block;
+        width: 20%;
+        margin: 0px 2% 0px 0px;
+    }
+    
+    .ui-field-contain .ui-select {
+        width: 78%;
+        display: inline-block;
+    }
+    
+    .ui-select {
+        display: block;
+        position: relative;
+    }
+    
+    label {
+        cursor: default;
+    }
+    
+    user agent stylesheetdiv {
+        display: block;
+    }
+    
+    .custom_div {
+        width: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /*To change the theme and functionality based on screen size.*/
+    
+    @media only screen and (max-width: 420px) {
+        .ui-select .ui-btn-text {
+            text-overflow: ellipsis;
+            width: 95px;
+        }
+        .custom_div {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .ui-icon-myapp-email {
+            background-image: url("img/sign-out.png");
+            background-size: 18px 18px;
+        }
+    }
+    
+    .ui-state-disabled {
+        background-image: none;
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <!--Manage clients-->
+    <div data-role="page" id="managetask_page" class="bg">
+        //
+        <script src="js/managetask.js"></script>
+        <!-- // <script src="js/email_composer.js"></script> -->
+        <!-- // <script src="js/jquery.maskedinput.js"></script> -->
+        <!-- Panel -->
+        <div data-display="overlay" data-role="panel" id="left-menu">
+            <div class="ui-grid-b center" id="top-icon">
+                <div class="ui-block-a headerA">
+                    <a href="#"> <img style="margin-bottom:25px;" src="images/techsoft-logo.png" width="260" class="panelHeaderImg" /> </a>
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="left-side-menu">
+                <li>
+                    <a href="TempScreen.html"><img src="images/home-1.png" alt="Home" class="ui-li-icon ui-corner-none home">Home</a>
+                </li>
+                <li class="billsli">
+                    <a href="bills.html"><img src="images/bills-32.png" alt="Bills" class="ui-li-icon ui-corner-none bills">Bills</a>
+                </li>
+                <li class="reportli">
+                    <a href="reports.html"><img src="images/report-32.png" alt="Reports" class="ui-li-icon reports"> Reports </a>
+                </li>
+                <!-- <li><a href="manageclients.html"><img src="images/clients-32.png" alt="Clients" class="ui-li-icon"> Clients </a> </li> -->
+                <li class="timesheetli">
+                    <a href="timesheet.html"><img src="images/timesheet-32.png" alt="Timesheets" class="ui-li-icon ui-corner-none timesheet">Timesheets </a>
+                </li>
+                <li class="taskli">
+                    <a href="tasks.html"><img src="images/queue-32.png" alt="Queue" class="ui-li-icon tasks">Tasks</a>
+                </li>
+                <!-- <li><a href="#"><img src="images/appointmentss.png" alt="Appointments" class="ui-li-icon ui-corner-none">Appointments </a> </li> -->
+                <!-- <li><a href="#"><img src="images/payment-32.png" alt="Payments" class="ui-li-icon ui-corner-none">Payments </a> </li> -->
+                <!--    <li class="bottom-push"><a target="_blank" href="http://baby2mom.co.za/"><img src="images/loading.png" alt="" 
+	      class="ui-li-icon ui-corner-none">Switch to webversion</a>
+	      </li> -->
+            </ul>
+        </div>
+        <!-- Header -->
+        <div data-role="header" id="header" data-position="fixed">
+            <a href="#left-menu" data-icon="bars" data-iconpos="notext" class="icons-custom"></a>
+            <h1 class="ui-title headerH">
+	             	<img src="images/techsoft-logo.png" class="headerImg"/>
+	            </h1>
+            <div class="header-title"> <a href="" onclick="searchtask();" class="ui-btn ui-shadow ui-corner-all  ui-icon-search ui-btn-icon-notext icons-orange push-left5 left index" id="searchToggle"> Search </a>
+                <h1>Tasks</h1> <a style="margin-top: -37px;" href="" onclick="addTask();" class="index ui-btn ui-shadow ui-corner-all  ui-icon-plus ui-btn-icon-notext icons-orange push-right5 right"> Add  </a>
+            </div>
+            <!-- <div class="bottom-shadow" style="top:-48px !important;"> <img src="images/shadow2.png" /> </div> -->
+            <!--<a href=""  data-rel="back" data-icon="back" data-iconpos="notext" class="icons-custom"></a>-->
+        </div>
+        <!-- Custom Header -->
+        <div id="clients" style="margin-top:45px;">
+            <div id="filterarea">
+                <div data-role="content" class="mSearch" id="manageclients" style="">
+                    <ul id="listclient" data-role="listview" class="ui-icon-alt jqm-custom-list-view" data-divider-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search Tasks">
+                        <li>Task 1</li>
+                        <li>Task 2</li>
+                        <li>Task 2</li>
+                    </ul>
+                </div>
+                <!--
+	                          <div class="ui-grid-a">
+      <div class="ui-block-a"><button  data-icon="arrow-l"  data-mini="true" id="prev" data-theme="c" onclick="pagination_prev();">Previous</button></div>
+    <div class="ui-block-b"><button data-icon="arrow-r"  data-mini="true" id="next" data-iconpos="right" data-theme="c" onclick="pagination_next();">Next</button>
+    </div>
+     </div>-->
+            </div>
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <h1>©2014 Techsoft Business solutions</h1>
+        </div>
+    </div>
+</body>
+
+</html>
